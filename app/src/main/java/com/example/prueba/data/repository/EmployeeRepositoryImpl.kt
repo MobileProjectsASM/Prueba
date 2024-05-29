@@ -19,7 +19,7 @@ class EmployeeRepositoryImpl @Inject constructor(
 
     override suspend fun syncEmployees(): Boolean {
         if (!connections.isThereNetworkConnection()) throw ConnectionException("There isn't network connection")
-        val employees = employeeRemoteSource.getEmployees()
+        val employees = employeeRemoteSource.getEmployeesByAuditoryAndCriterion()
         employeeLocalSource.saveEmployees(employees)
         return true
     }
