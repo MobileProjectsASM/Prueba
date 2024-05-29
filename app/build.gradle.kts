@@ -63,7 +63,7 @@ dependencies {
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    implementation("com.google.code.gson:gson:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

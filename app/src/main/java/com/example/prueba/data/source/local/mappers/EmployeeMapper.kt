@@ -3,7 +3,7 @@ package com.example.prueba.data.source.local.mappers
 import com.example.prueba.data.source.local.entities.Employee
 import com.example.prueba.domain.entities.Employee as EmployeeDomain
 
-class EmployeeMappers {
+class EmployeeMapper {
 
     fun toEmployeeDomain(employee: Employee): EmployeeDomain = EmployeeDomain(
         employee.email,

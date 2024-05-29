@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface EmployeeRepository {
     suspend fun getEmployees(): Flow<List<Employee>>
-    suspend fun syncEmployees(): Boolean
+    suspend fun syncEmployees(auditory: String, criterion: String): Boolean
 }

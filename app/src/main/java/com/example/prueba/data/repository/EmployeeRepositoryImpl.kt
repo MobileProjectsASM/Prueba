@@ -17,9 +17,9 @@ class EmployeeRepositoryImpl @Inject constructor(
 
     override suspend fun getEmployees(): Flow<List<Employee>> = employeeLocalSource.getEmployees()
 
-    override suspend fun syncEmployees(): Boolean {
+    override suspend fun syncEmployees(auditory: String, criterion: String): Boolean {
         if (!connections.isThereNetworkConnection()) throw ConnectionException("There isn't network connection")
-        val employees = employeeRemoteSource.getEmployeesByAuditoryAndCriterion()
+        val employees = employeeRemoteSource.getEmployeesByAuditoryAndCriterion(auditory, criterion)
         employeeLocalSource.saveEmployees(employees)
         return true
     }
